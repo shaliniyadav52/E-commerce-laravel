@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,11 @@ use App\Http\Controllers\AdminController;
 Route::get('/hello', function () {
     return view('welcome');
 });
-Route::get('admin',[AdminController::class,'index']);
-Route::get('/hi', function () {
+
+//Login page Route
+Route::get('/login', function () {
     return view('admin.login');
 });
+Route::post('/login-page',[UserController::class,'login']);
+//product page
+Route::get('/', [ProductController::class, 'index']);
