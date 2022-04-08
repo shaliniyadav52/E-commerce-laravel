@@ -1,4 +1,4 @@
-@extends('admin.master');
+@extends('master');
 @section('content')
 <div class="custom-product">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -12,16 +12,17 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           @foreach ($products as $item)
-          {{-- products comes from productcontroller --}}
-          <div class="item {{$item[ 'id']==1?'active':''}}">
-            <img class="slider-img" src="{{$item['gallery']}}" >
-            <div class="carousel-caption slider-text">
-              <h3>{{$item['name']}}</h3>
-
-              <p>{{$item['description']}}</p>
+          <div class="item {{$item['id']==1?'active':''}}">
+          <a href="detail/{{$item['id']}}">
+                <img class="slider-img" src="{{$item['gallery']}}">
+              <div class="carousel-caption slider-text">
+                <h3>{{$item['name']}}</h3>
+                <p>{{$item['description']}}</p>
+              </div>
+              </a>
             </div>
-          </div>    
-          @endforeach
+      
+            @endforeach
         </div>
       
         <!-- Left and right controls -->
@@ -37,15 +38,16 @@
       <div class="trending-wrapper">
         <h3>Trending Products</h3>
         @foreach($products as $item)
-        <div class="trending-item">
-          <img class="trending-img" src="{{$item['gallery']}}" >
+        <div class="trening-item">
+          <a href="detail/{{$item['id']}}">
+          <img class="trending-image" src="{{$item['gallery']}}">
           <div class="">
             <h3>{{$item['name']}}</h3>
-
-            
           </div>
+        </a>
         </div>
         @endforeach
+      
       </div>
 
        

@@ -14,9 +14,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-     {{View::make('admin.header')}}
-        @yield('content')
-        {{View::make('admin.footer')}}
+    {{View::make('header')}}
+    @yield('content')
+    {{View::make('footer')}}
 
 </body>
 <style>
@@ -25,25 +25,34 @@
         padding-top: 100px;
     }
     img.slider-img{
-        height: 400px  !important;
+        height: 400px !important
     }
     .custom-product{
-        height: 800px;
+        height: 600px
     }
     .slider-text{
-        background: #35443585 !important;
+        background-color: #35443585 !important;
     }
-    .trending-img{
+    .trending-image{
         height: 100px;
     }
-    
-    .trending-item{
+    .trening-item{
         float: left;
-         width: 20%; 
+        width: 20%;
     }
-    
     .trending-wrapper{
         margin: 30px;
-    } 
+    }
+    .detail-img{
+        height: 200px;
+    }
+    .search-box{
+        width: 500px !important
+    }
+    .cart-list-devider{
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding-bottom: 20px
+    }
 </style>
 </html>

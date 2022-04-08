@@ -21,8 +21,11 @@ Route::get('/hello', function () {
 
 //Login page Route
 Route::get('/login', function () {
-    return view('admin.login');
+    return view('login');
 });
 Route::post('/login-page',[UserController::class,'login']);
 //product page
 Route::get('/', [ProductController::class, 'index']);
+Route::get('detail/{id}',[ProductController::class,'detail']);
+Route::get("search",[ProductController::class,'search']);
+Route::post("add_to_cart",[ProductController::class,'addToCart']);
