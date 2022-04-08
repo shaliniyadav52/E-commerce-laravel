@@ -23,9 +23,16 @@ Route::get('/hello', function () {
 Route::get('/login', function () {
     return view('login');
 });
+//logout pafe route
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('login');
+});
 Route::post('/login-page',[UserController::class,'login']);
 //product page
 Route::get('/', [ProductController::class, 'index']);
 Route::get('detail/{id}',[ProductController::class,'detail']);
 Route::get("search",[ProductController::class,'search']);
 Route::post("add_to_cart",[ProductController::class,'addToCart']);
+
+ 
